@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:58:55 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 14:24:35 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/20 18:23:03 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/20 18:27:46 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	ft_bzero(void *s, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	*ptr;
+	unsigned int	i;
 
-	ptr = (unsigned char *)s;
-	while (n--)
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		*ptr = 0;
-		ptr++;
+		f(i, &s[i]);
+		i++;
 	}
 }

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:58:55 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 14:24:35 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/20 18:37:28 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/20 18:40:18 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*ptr;
+	char	c;
 
-	ptr = (unsigned char *)s;
-	while (n--)
+	if (n == -2147483648)
 	{
-		*ptr = 0;
-		ptr++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
 }

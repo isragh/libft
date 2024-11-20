@@ -6,7 +6,7 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:02:41 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/15 15:33:25 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/20 14:24:54 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char src[] = "Hello, World!";
-	char dest[20];
-
-	ft_memmove(dest, src, 13);
-
-	printf("Result of ft_memmove: %s\n", dest);  // Should print "Hello, World!"
-	
-	return 0;
-}
-*/

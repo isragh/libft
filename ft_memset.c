@@ -6,7 +6,7 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:49:42 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/15 12:53:55 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/20 14:24:14 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char str[20] = "Hello, world!";
-	
-	printf("%s\n", (char *)ft_memset(str, 'a', 5));
-	return 0;
-}
-*/

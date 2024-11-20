@@ -1,35 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 14:05:50 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 14:10:17 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/20 17:43:31 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/20 17:49:50 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+static size_t	ft_numlen(int n)
 {
 	size_t	len;
-	char	*duplicate;
-	size_t	i;
 
 	len = 0;
-	duplicate = (char *)malloc((len + 1) * sizeof(char));
-	i = 0;
-	while (s1[len] != '\0')
+	if (n <= 0)
 		len++;
-	if (!duplicate)
-		return (NULL);
-	while (i < len) 
+	while (n != 0)
 	{
-		duplicate[i] = s1[i];
-		i++;
+		n /= 10;
+		len++;
 	}
-	duplicate[i] = '\0';
-	return (duplicate);
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	size_t	len;
+	long	num;
+
+	num = n;
+	len = ft_numlen(n);
+	str = (char *)malloc(len + 1);
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = -num;
+	}
+	else if (num == 0)
+		str[0] = '0';
+	while (num > 0)
+	{
+		str[--len] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (str);
 }

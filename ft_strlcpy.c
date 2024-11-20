@@ -6,7 +6,7 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:55:26 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/15 16:01:15 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/20 14:25:25 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (src_len);
 }
-
-/*
-#include <stdio.h>
-
-int main() 
-{
-        char dest[20];
-        const char *src = "Hello, world!";
-
-        size_t copied = ft_strlcpy(dest, src, sizeof(dest));
-        printf("Copied string: %s\n", dest);
-        printf("Length of source: %zu\n", copied);
-        
-        return 0;
-}
-*/

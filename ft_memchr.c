@@ -1,48 +1,31 @@
-
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/20 14:14:38 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/20 14:18:01 by isrgonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memchr(const void *s, int c, size_t n) 
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *ptr = (const unsigned char *)s;
- 	unsigned char target = (unsigned char)c;
- 	size_t i = 0;
+	const unsigned char	*ptr;
+	unsigned char		target;
+	size_t				i;
 
-    	while (i < n) 
+	ptr = (const unsigned char *)s;
+	target = (unsigned char)c;
+	i = 0;
+	while (i < n) 
 	{
 		if (ptr[i] == target)
-			return (void *)&ptr[i];
+			return ((void *)&ptr[i]);
 		i++;
-    	}
-
-	return NULL;
+	}
+	return (NULL);
 }
-
-/*
-#include <stdio.h>
-
-int	main() {
-    	char arr[] = "Hello, World!";
-    	char c = 'W';
-    	size_t n = 13;
-
-    	char *result = ft_memchr(arr, c, n);
-
-    	if (result != NULL) {
-        	printf("Character '%c' found at position: %ld\n", c, result - arr);
-    	} else {
-        	printf("Character '%c' not found in the first %zu bytes.\n", c, n);
-    	}
-
-    	return 0;
-}
-*/
-
-// MADE AT HOME ------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------

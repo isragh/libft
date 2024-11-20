@@ -1,63 +1,37 @@
-
-
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/20 13:53:57 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/20 14:05:22 by isrgonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size) 
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t total_size = count * size;
+	unsigned char		*byte_ptr;
+	size_t				total_size;
+	void				*ptr;
+	size_t				i;
 
+	total_size = count * size;
+	ptr = malloc(total_size);
+	byte_ptr = (unsigned char *)ptr;
+	i = 0;
 	if (count == 0 || size == 0) 
-	        return malloc(0);
-
-	void *ptr = malloc(total_size);
-
+		return (malloc(0));
 	if (!ptr)
-		return NULL;
-
-	unsigned char *byte_ptr = (unsigned char *)ptr;
-	size_t i = 0;
-
+		return (NULL);
 	while (i < total_size) 
 	{
-        	byte_ptr[i] = 0;
+		byte_ptr[i] = 0;
 		i++;
-    	}
-
-	return ptr;
+	}
+	return (ptr);
 }
-
-
-/*
-#include <stdio.h>
-
-int	main() {
-    	size_t count = 5;
-    	size_t size = sizeof(int);
-
-    	int *arr = (int *)ft_calloc(count, size);
-
-    	if (arr == NULL) {
-        	printf("Memory allocation failed.\n");
-        	return 1;
-    	}
-
-	for (size_t i = 0; i < count; i++) {
-        	printf("arr[%zu] = %d\n", i, arr[i]);
-    	}
-
-    	free(arr);
-
-    	return 0;
-}
-*/
-
-// MADE AT HOME ------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------
