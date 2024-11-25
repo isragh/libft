@@ -6,11 +6,11 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:11:56 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 16:28:54 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:34:07 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s);
 

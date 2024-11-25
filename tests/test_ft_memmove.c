@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test_ft_memmove.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 15:31:23 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 11:32:19 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+void test_ft_memmove(void)
 {
-	size_t	i;
+    printf("Testing ft_memmove...\n");
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    char dest1[20] = "Original";
+    char dest2[20] = "Original";
+    const char src[] = "Test";
+
+    ft_memmove(dest1 + 3, src, 4);
+    memmove(dest2 + 3, src, 4);
+
+    if (memcmp(dest1, dest2, 20) == 0)
+        printf("Test 1: ✅ Passed\n");
+    else
+        printf("Test 1: ❌ Failed\n");
 }

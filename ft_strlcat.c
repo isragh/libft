@@ -6,11 +6,11 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:03:18 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 14:26:02 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:31:25 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

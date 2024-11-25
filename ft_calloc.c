@@ -6,12 +6,11 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:53:57 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 14:05:22 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:22:02 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

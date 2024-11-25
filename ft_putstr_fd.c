@@ -6,11 +6,11 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 18:33:10 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 18:34:17 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:28:25 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

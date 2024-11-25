@@ -6,11 +6,11 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:43:31 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 17:49:50 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:23:53 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	ft_numlen(int n)
 {

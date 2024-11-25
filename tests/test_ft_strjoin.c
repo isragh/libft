@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test_ft_strjoin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 15:31:23 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 11:32:19 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+void test_ft_strjoin(void)
 {
-	size_t	i;
+    printf("Testing ft_strjoin...\n");
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    const char *s1 = "Hello, ";
+    const char *s2 = "World!";
+    const char *expected = "Hello, World!";
+
+    char *result = ft_strjoin(s1, s2);
+
+    if (strcmp(result, expected) == 0)
+        printf("Test 1: ✅ Passed\n");
+    else
+        printf("Test 1: ❌ Failed\n");
+
+    free(result);
 }

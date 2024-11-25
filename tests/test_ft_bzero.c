@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test_ft_bzero.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 15:31:23 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 11:32:19 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 13:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 13:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+void test_ft_bzero(void)
 {
-	size_t	i;
+    printf("Testing ft_bzero...\n");
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    char buffer1[10] = "abcdef";
+    char buffer2[10] = "abcdef";
+
+    ft_bzero(buffer1, 3);
+    bzero(buffer2, 3);
+
+    if (memcmp(buffer1, buffer2, 10) == 0)
+        printf("Test 1: ✅ Passed\n");
+    else
+        printf("Test 1: ❌ Failed\n");
 }

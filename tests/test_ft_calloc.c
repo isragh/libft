@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test_ft_calloc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 15:31:23 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 11:32:19 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+void test_ft_calloc(void)
 {
-	size_t	i;
+    printf("Testing ft_calloc...\n");
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    size_t count = 5;
+    size_t size = sizeof(int);
+
+    void *ft_res = ft_calloc(count, size);
+    void *std_res = calloc(count, size);
+
+    if (memcmp(ft_res, std_res, count * size) == 0)
+        printf("Test 1: ✅ Passed\n");
+    else
+        printf("Test 1: ❌ Failed\n");
+
+    free(ft_res);
+    free(std_res);
 }

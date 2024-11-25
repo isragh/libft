@@ -6,12 +6,11 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:31:04 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 15:19:07 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:34:42 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:29:37 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/20 17:41:59 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:28:53 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static char	**ft_free_arr(char **split, int i)
 {
