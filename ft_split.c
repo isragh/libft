@@ -75,13 +75,13 @@ static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 			word_len++;
 		}
 		s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (!s2)
+		if (!s2[word])
 			return (ft_free_arr(s2, word));
 		ft_putword(s2[word], s, i, word_len);
 		word_len = 0;
 		word++;
 	}
-	s2[word] = '\0';
+	s2[word] = NULL;
 	return (s2);
 }
 
