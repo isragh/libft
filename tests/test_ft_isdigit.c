@@ -6,7 +6,7 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/26 12:27:32 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ void test_ft_isdigit(void)
     char c2 = '9';
     char c3 = 'A';
 
-    if (ft_isdigit(c1) == isdigit(c1))
+    if ((ft_isdigit(c1) != 0) == (isdigit(c1) != 0))
         printf("Test 1: ✅ Passed\n");
     else
         printf("Test 1: ❌ Failed\n");
-
-    if (ft_isdigit(c2) == isdigit(c2))
+       
+    if ((ft_isdigit(c2) != 0) == (isdigit(c2) != 0))
         printf("Test 2: ✅ Passed\n");
     else
         printf("Test 2: ❌ Failed\n");
-
-    if (ft_isdigit(c3) == isdigit(c3))
+ 
+    if ((ft_isdigit(c3) != 0) == (isdigit(c3) != 0))
         printf("Test 3: ✅ Passed\n");
     else
         printf("Test 3: ❌ Failed\n");

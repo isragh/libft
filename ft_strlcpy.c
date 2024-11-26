@@ -6,7 +6,7 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:55:26 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 11:31:59 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/26 13:36:05 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	src_len;
 	size_t	i;
-
-	src_len = 0;
+	
 	i = 0;
-	while (src[src_len] != '\0')
-		src_len++;
 	if (size > 0)
 	{
-		while (i < size - 1 && src[i] != '\0')
+		while (src[i] != '\0' && i < (size - 1))
 		{
 			dst[i] = src[i];
 			i++;
 		}
 		dst[i] = '\0';
 	}
-	return (src_len);
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

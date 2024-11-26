@@ -6,7 +6,7 @@
 #    By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 01:05:24 by jcluzet           #+#    #+#              #
-#    Updated: 2024/11/25 12:23:56 by isrgonza         ###   ########.fr        #
+#    Updated: 2024/11/26 11:38:42 by isrgonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ re: fclean all
 test: $(NAME)
 	@echo "Buildng and running test..."
 	$(CC) $(FLAGS) $(TEST_SRC) $(TEST_DIR)/main.c -L. -lft -o $(TEST_EXEC)
-	./$(TEST_EXE)
+	./$(TEST_EXEC)
 
 # Phony targets ************************************************************* #
 .PHONY: all clean fclean re test
