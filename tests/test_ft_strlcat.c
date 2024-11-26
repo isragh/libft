@@ -6,7 +6,7 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:30:00 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 13:30:00 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:23:40 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void test_ft_strlcat(void)
     const char *src = "World!";
 
     size_t len1 = ft_strlcat(dest1, src, 20);
-    size_t len2 = strlcat(dest2, src, 20);
+    size_t len2 = ft_strlcat(dest2, src, 20);
 
     if (len1 == len2 && strcmp(dest1, dest2) == 0)
         printf("Test 1: ✅ Passed\n");
@@ -32,7 +32,7 @@ void test_ft_strlcat(void)
     char short_dest2[5] = "Hi";
 
     len1 = ft_strlcat(short_dest1, src, 5);
-    len2 = strlcat(short_dest2, src, 5);
+    len2 = ft_strlcat(short_dest2, src, 5);
 
     if (len1 == len2 && strcmp(short_dest1, short_dest2) == 0)
         printf("Test 2: ✅ Passed\n");

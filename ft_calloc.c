@@ -6,7 +6,7 @@
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:53:57 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 11:22:02 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/26 10:56:09 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,19 @@ void	*ft_calloc(size_t count, size_t size)
 	void				*ptr;
 	size_t				i;
 
-	total_size = count * size;
+	if (count == 0 || size == 0)
+		total_size = 0;
+	else
+	{
+		total_size = count * size;
+		if (total_size / count != size)
+			return (NULL);
+	}
 	ptr = malloc(total_size);
-	byte_ptr = (unsigned char *)ptr;
-	i = 0;
-	if (count == 0 || size == 0) 
-		return (malloc(0));
 	if (!ptr)
 		return (NULL);
+	byte_ptr = (unsigned char *)ptr;
+	i = 0;
 	while (i < total_size) 
 	{
 		byte_ptr[i] = 0;
