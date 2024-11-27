@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_isascii.c                                  :+:      :+:    :+:   */
+/*   test_ft_toupper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 13:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 13:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void test_ft_isascii(void)
+void test_ft_lstsize(void)
 {
-    printf("Testing ft_isascii...\n");
+    printf("Testing ft_lstsize...\n");
 
-    char c1 = 65;  // 'A'
-    unsigned char c2 = 128; // Non-ASCII character
-    char c3 = 0;   // Null character
+    t_list *node1 = ft_lstnew("Node 1");
+    t_list *node2 = ft_lstnew("Node 2");
+    t_list *node3 = ft_lstnew("Node 3");
 
-    if (ft_isascii(c1) == isascii(c1))
+    node1->next = node2;
+    node2->next = node3;
+
+    if (ft_lstsize(node1) == 3)
         printf("Test 1: ✅ Passed\n");
     else
         printf("Test 1: ❌ Failed\n");
 
-    if (ft_isascii(c2) == isascii(c2))
-        printf("Test 2: ✅ Passed\n");
-    else
-        printf("Test 2: ❌ Failed\n");
-
-    if (ft_isascii(c3) == isascii(c3))
-        printf("Test 3: ✅ Passed\n");
-    else
-        printf("Test 3: ❌ Failed\n");
+    free(node3);
+    free(node2);
+    free(node1);
 }

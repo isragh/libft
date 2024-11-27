@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_isascii.c                                  :+:      :+:    :+:   */
+/*   test_ft_toupper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 13:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 13:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void test_ft_isascii(void)
+void test_ft_lstadd_back(void)
 {
-    printf("Testing ft_isascii...\n");
+    printf("Testing ft_lstadd_back...\n");
 
-    char c1 = 65;  // 'A'
-    unsigned char c2 = 128; // Non-ASCII character
-    char c3 = 0;   // Null character
+    t_list *node1 = ft_lstnew("Node 1");
+    t_list *node2 = ft_lstnew("Node 2");
 
-    if (ft_isascii(c1) == isascii(c1))
+    ft_lstadd_back(&node1, node2);
+
+    if (node1->next == node2 && strcmp((char *)node1->next->content, "Node 2") == 0)
         printf("Test 1: ✅ Passed\n");
     else
         printf("Test 1: ❌ Failed\n");
 
-    if (ft_isascii(c2) == isascii(c2))
-        printf("Test 2: ✅ Passed\n");
-    else
-        printf("Test 2: ❌ Failed\n");
-
-    if (ft_isascii(c3) == isascii(c3))
-        printf("Test 3: ✅ Passed\n");
-    else
-        printf("Test 3: ❌ Failed\n");
+    free(node2);
+    free(node1);
 }

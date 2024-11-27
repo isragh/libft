@@ -47,5 +47,14 @@ void test_ft_putendl_fd(void);
 void test_ft_putnbr_fd(void);
 void test_ft_toupper(void);
 void test_ft_tolower(void);
+void test_ft_lstnew(void);
+void test_ft_lstadd_front(void);
+void test_ft_lstsize(void);
+void test_ft_lstlast(void);
+void test_ft_lstadd_back(void);
+void test_ft_lstdelone(void);
+void test_ft_lstclear(void);
+void test_ft_lstiter(void);
+void test_ft_lstmap(void);
 
 #endif

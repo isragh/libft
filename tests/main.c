@@ -118,6 +118,34 @@ int main(void) {
     test_ft_tolower();
     printf("Finished testing ft_tolower.\n\n");
 
+    printf("***********BONUS TEST************\n\n");
+
+    test_ft_lstnew();
+    printf("Finished testing ft_lstnew.\n\n");
+
+    test_ft_lstadd_front();
+    printf("Finished testing ft_lstadd_front.\n\n");
+
+    test_ft_lstsize();
+    printf("Finished testing ft_lstsize.\n\n");
+
+    test_ft_lstlast();
+    printf("Finished testing ft_lstlast.\n\n");
+
+    test_ft_lstadd_back();
+    printf("Finished testing ft_lstadd_back.\n\n");
+
+    test_ft_lstdelone();
+    printf("Finished testing ft_lstdelone.\n\n");
+
+    test_ft_lstclear();
+    printf("Finished testing ft_lstclear.\n\n");
+
+    test_ft_lstiter();
+    printf("Finished testing ft_lstiter.\n\n");
+
+    test_ft_lstmap();
+    printf("Finished testing ft_lstmap.\n\n");
     printf("All tests completed.\n");
     return 0;
 }
