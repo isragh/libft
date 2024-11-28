@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   test_ft_toupper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 09:43:31 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/27 16:42:14 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 13:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 13:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void test_ft_lstnew(void)
 {
-	t_list	*temp;
+    printf("Testing ft_lstnew...\n");
 
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		temp = *lst;
-		*lst = temp->next;
-		ft_lstdelone(temp, (*del));
-	}
+    t_list *node = ft_lstnew("Test content");
+
+    if (node && node->content && strcmp((char *)node->content, "Test content") == 0 && node->next == NULL)
+        printf("Test 1: ✅ Passed\n");
+    else
+        printf("Test 1: ❌ Failed\n");
+
+    free(node);
 }

@@ -4,9 +4,9 @@
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
-/*      i                                          +#+#+#+#+#+   +#+           */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:10:54 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/25 11:38:29 by isrgonza         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:53:28 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 # include <fcntl.h>
 
 // Define the linked list struct
-typedef struct	s_list
+typedef struct s_list
 {
-	void	*content;
-	struct	s_list	*next;
-}	t_list;
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 // Character checks
 int		ft_isalpha(int c);

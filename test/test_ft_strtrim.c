@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   test_ft_strtrim.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 09:43:31 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/27 16:42:14 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void test_ft_strtrim(void)
 {
-	t_list	*temp;
+    printf("Testing ft_strtrim...\n");
 
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		temp = *lst;
-		*lst = temp->next;
-		ft_lstdelone(temp, (*del));
-	}
+    const char *s1 = "   Hello, World!   ";
+    const char *set = " ";
+
+    char *res = ft_strtrim(s1, set);
+    if (strcmp(res, "Hello, World!") == 0)
+        printf("Test 1: ✅ Passed\n");
+    else
+        printf("Test 1: ❌ Failed\n");
+
+    free(res);
 }

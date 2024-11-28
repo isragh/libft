@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   test_ft_memcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isrgonza <isrgonza@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 09:43:31 by isrgonza          #+#    #+#             */
-/*   Updated: 2024/11/27 16:42:14 by isrgonza         ###   ########.fr       */
+/*   Created: 2024/11/25 12:00:00 by isrgonza          #+#    #+#             */
+/*   Updated: 2024/11/25 12:00:00 by isrgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void test_ft_memcpy(void)
 {
-	t_list	*temp;
+    printf("Testing ft_memcpy...\n");
 
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		temp = *lst;
-		*lst = temp->next;
-		ft_lstdelone(temp, (*del));
-	}
+    char dest1[20] = "Original";
+    char dest2[20] = "Original";
+    const char src[] = "Test";
+
+    ft_memcpy(dest1, src, 4);
+    memcpy(dest2, src, 4);
+
+    if (memcmp(dest1, dest2, 20) == 0)
+        printf("Test 1: ✅ Passed\n");
+    else
+        printf("Test 1: ❌ Failed\n");
 }
