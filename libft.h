@@ -15,11 +15,16 @@
 
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdarg.h>
 # include <ctype.h>
 # include <fcntl.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 // Define the linked list struct
 typedef struct s_list
@@ -34,6 +39,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 
 // Memory manipulation
 void	ft_bzero(void *s, size_t n);
@@ -84,5 +90,22 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//printf functions
+int		ft_putchar(int c);
+int		ft_putstr(char *str);
+int		ft_putnbr(int nbr);
+int		ft_putnbr_uns(unsigned int nbr);
+int		ft_param(char format, va_list arg);
+int		ft_printf(const char *format, ...);
+int		ft_putnbr_hex(unsigned int n, char *base);
+int		ft_pointer(size_t n, char *base);
+int		ft_isnumber(char *str);
+double	ft_pow(double x, double y);
+
+//get_next_line functions
+char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+size_t	ft_strlen_gnl(char *str);
 
 #endif
